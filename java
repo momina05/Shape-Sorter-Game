@@ -1,4 +1,4 @@
-interface interactive{
+interface Interactive{
   void onInteract();
 }
 abstract class Shape implements Interactive{
