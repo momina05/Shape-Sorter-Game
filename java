@@ -16,3 +16,22 @@ abstract class Shape implements Interactive{
     System.out.println("You interacted with a" +getColor()+ "shape.");
   }
 }
+
+class circle extends Shape
+{
+  public circle(String color)
+{
+  super(color);
+}
+@Override
+public void display()
+{
+system.out.print("O"+getColor().charAt(0));
+}
+
+@Override
+public void onInteract()
+{
+  Ssytem.out.println("You tapped a"+getColor()+"Circle");
+}
+}
