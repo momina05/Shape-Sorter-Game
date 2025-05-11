@@ -17,21 +17,17 @@ abstract class Shape implements Interactive{
   }
 }
 
-class circle extends Shape
-{
-  public circle(String color)
-{
+class circle extends Shape{  
+  public circle(String color){
   super(color);
 }
 @Override
-public void display()
-{
+public void display(){
 system.out.print("O"+getColor().charAt(0));
 }
 
 @Override
-public void onInteract()
-{
+public void onInteract(){
   Ssytem.out.println("You tapped a"+getColor()+"Circle");
 }
 }
@@ -47,5 +43,17 @@ class Square extends Shape{
   @Override
   public void onInteract(){
     System.out.println("You clicked a" +getColor() +"Square");
+  }
+}
+class Triangle extends Shape{
+  public Triangle(String color){
+    super(color);
+  }
+  @Overridepublic void display(){
+    System.out.print("^"+ getColor().charAt(0));
+  }
+  @Override
+  public void onInteract(){
+  System.out.println("A" + getColor() + "triangle responded at your touch!");
   }
 }
