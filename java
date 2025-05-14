@@ -120,4 +120,33 @@ private void initializaGame(){
            break;     
     }
   }
+
+  //initialize containers with distinct colors
+  List<String>availableContainerColors = new ArrayList<>(List of(possibleColors));
+  for(int i = 0; i < container.length; i++){
+    if(availableContainerColors.isEmpty()){
+      System.out.println("Not enough distinct colors for the requested number of containers.");
+      break;
+    }
+    int randomIndex = random.nextInt(availableContainerColors.remove(randomIndex));
+  }
+}
+
+public void displayChallenge(){
+  System.out.println("\n--- Shape Sorter Challenge ---");
+  System.out.println("Score: " +score);
+  System.out.println("\nShapes to sort:");
+ 
+  for(int i = 0; i < shapes.length; i++){
+    System.out.print((i + 1)+ ".");
+    shapes[i].display(); //Polymorphic call to display
+    System.out.print("");
+  }
+ 
+  System.out.println("\nContainers.");
+  for(int i = 0; i < containers.lenght; i++){
+    System.out.print((char)('A' + i)+ ".");
+    containers[i].display();
+  }
+  System.out.println("\nEnter the shape number(1- "+shapes.length+) and container letter(A- "+(char('A'+containers.length- 1)+") to sort(e.g., 1A) or 'interact[shape number]' or 'quit. ");
 }
