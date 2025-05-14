@@ -148,5 +148,6 @@ public void displayChallenge(){
     System.out.print((char)('A' + i)+ ".");
     containers[i].display();
   }
-  System.out.println("\nEnter the shape number(1- "+shapes.length+) and container letter(A- "+(char('A'+containers.length- 1)+") to sort(e.g., 1A) or 'interact[shape number]' or 'quit. ");
+  System.out.println("\nEnter the shape number(1- "+shapes.length+) and container letter(A- "+(char('A'+containers.length- 1)+") 
+                      to sort(e.g., 1A) or 'interact[shape number]' or 'quit. ");
 }
