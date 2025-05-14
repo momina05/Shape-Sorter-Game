@@ -26,12 +26,12 @@ class circle extends Shape{
 
 @Override
 public void display(){
-system.out.print("O"+getColor().charAt(0));
+System.out.print("O"+getColor().charAt(0));
 }
 
 @Override
 public void onInteract(){
-  Ssytem.out.println("You tapped a"+getColor()+"Circle");
+  sytem.out.println("You tapped a"+getColor()+"Circle");
 }
 }
 
