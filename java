@@ -151,3 +151,52 @@ public void displayChallenge(){
   System.out.println("\nEnter the shape number(1- "+shapes.length+) and container letter(A- "+(char('A'+containers.length- 1)+") 
                       to sort(e.g., 1A) or 'interact[shape number]' or 'quit. ");
 }
+
+public void processInput(String input){
+if(input.equalsIgnoreCase("quit")){
+System.out.println("Thanks for Playing! Final Score:" + score );
+System.exit(0);
+}
+else if (input.startsWith("interact")){
+  String numberStr = input.subString("interact".length());
+if (isNumeric (numberStr)){
+    int shapeIndex = Integer..parseInt(numberStr) -1;
+    if(shapeIndex >= 0 && shapeIndex < shapes.length && shapes [shapeIndex] != null) {
+        shapes[shapeIndex].onInteract(); // call to onInteract
+}
+}
+else {
+System.out.println("Invalid shape number for interaction.");
+}
+}
+else if (input.length() == 2){
+  char shapeChar =input.charAt(0);
+  char containerChar = input.charAt(1);
+
+  if (Character.isDigit(shapeChar) && Character.isLetter(containerChar)) {
+    int shapeIndex = Character.getNumericValue(shapeChar) -1;
+    int containerIndex = Character.toUpperCase(containerChar) -'A';
+
+     if (shapeIndex >= 0 && shapeIndex < shapes.length && shapes[shapeIndex] != null containerIndex >= 0  containerIndex < containers.length) {
+     
+     if (containers[containerIndex].canAccept(shapes[shapeIndex])){
+     System.out.println("Correctly sorted shape " + (shapeIndex + 1) + "into container" + (char) ('A' + containerIndex) + "!");
+     score++;
+     shapes[shapeIndex] = null;
+     }
+     else {
+     System.out.println("Incorrect sort. That shape does not belong to that container.");
+     }
+}
+else {
+     System.out.println("Invalid shape number or container letter.");
+}
+}
+else {
+     System.out.println("Invalid input format. Use format '1A'.");
+}
+}
+else {
+     System.out.println("Invalid input. Please use correct input.");
+}
+}
