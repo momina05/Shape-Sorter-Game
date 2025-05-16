@@ -1,16 +1,27 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
+//Interface for interactive game elements
 interface Interactive{
   void onInteract();
 }
+//Base class for all shapes
 abstract class Shape implements Interactive{
   private String color;
+
+  //Constructor for Shape
   public Shape(String color){
     this.color = color;
   }
   public String getColor(){
     return color;
   }
+  //Abstract method to display the shape (for polymorphsm)
   public abstarct void display();
   
+  //Default interaction for a shape
   @Override
   public void onInteract(){
     System.out.println("You interacted with a" +getColor()+ "shape.");
@@ -35,7 +46,9 @@ public void onInteract(){
 }
 }
 
+//Concrete class for Square, inheriting from Shape
 class Square extends Shape{
+  //Constructor for Square
   public Square(String color){
     super(color);
   }
@@ -67,9 +80,11 @@ class Triangle extends Shape{
   }
 }
 
+//Class representing a container
 class Container{
   private String color;
 
+  //Constructor for Container
   public Container(String color){
     this.color = color;
   }
@@ -86,6 +101,7 @@ class Container{
     return this.color.equalsIgnoreCase(shape.getColor());
   }
 }
+
 class ShapeSorter{
   private Shape[] shapes; //Array to hold shapes
   private Container[] containers; //Array to hold containers
@@ -199,4 +215,30 @@ else {
 else {
      System.out.println("Invalid input. Please use correct input.");
 }
+}
+
+public boolean is GameOver(){
+      for(Shape shape : shape){
+        if(shape != null){
+           return false; //There are still unsorted shapes
+           }
+        }
+        return true;
+}
+public void playGame(){
+     System.out.println("Welcome to the Ultimate Shape Sorter Challenge!");
+     while(!isGameOver()){
+        displayChallenge();
+        String input = scanner.nextLine().trim();
+        processInput(input);
+     }
+     System.out.println("\n---Game Over!---);
+     System.out.println("Final Score:" +score+ "out of" +shapes.length+ ".");
+     scanner.close();
+}
+
+public static void main(String args[]){
+    GameManager game = new GameManager(5,3); //Creating a game with 5 shapes and 3 containers
+    game.playGame();
+  }
 }
