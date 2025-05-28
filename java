@@ -179,6 +179,9 @@ if (isNumeric (numberStr)){
     int shapeIndex = Integer..parseInt(numberStr) -1;
     if(shapeIndex >= 0 && shapeIndex < shapes.length && shapes [shapeIndex] != null) {
         shapes[shapeIndex].onInteract(); // call to onInteract
+      score++;
+      System.out.println("You earned a point on interacting!");
+      shapes[shapeIndex] = null;
 }
 }
 else {
