@@ -42,7 +42,7 @@ System.out.print("O"+getColor().charAt(0));
 
 @Override
 public void onInteract(){
-  sytem.out.println("You tapped a"+getColor()+"Circle");
+  System.out.println("You tapped a"+getColor()+"Circle");
 }
 }
 
@@ -154,9 +154,11 @@ public void displayChallenge(){
   System.out.println("\nShapes to sort:");
  
   for(int i = 0; i < shapes.length; i++){
+    if (shapes[i] != null){
     System.out.print((i + 1)+ ".");
     shapes[i].display(); //Polymorphic call to display
     System.out.print("");
+    }
   }
  
   System.out.println("\nContainers.");
@@ -164,7 +166,7 @@ public void displayChallenge(){
     System.out.print((char)('A' + i)+ ".");
     containers[i].display();
   }
-  System.out.println("\nEnter the shape number(1- "+shapes.length+) and container letter(A- "+(char('A'+containers.length- 1)+") 
+  System.out.println("\nEnter the shape number(1- "+shapes.length+) and container letter(A- "+(char) ('A' + containers.length - 1) + ") 
                       to sort(e.g., 1A) or 'interact[shape number]' or 'quit. ");
 }
 
@@ -220,6 +222,8 @@ else {
 }
 }
 
+
+
 public boolean is GameOver(){
       for(Shape shape : shape){
         if(shape != null){
@@ -230,7 +234,7 @@ public boolean is GameOver(){
 }
 public void playGame(){
      System.out.println("Welcome to the Ultimate Shape Sorter Challenge!");
-     while(!isGameOver()){
+     while(!isGameOver() && !isGameOver()){
         displayChallenge();
         String input = scanner.nextLine().trim();
         processInput(input);
