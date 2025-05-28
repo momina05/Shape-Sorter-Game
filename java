@@ -171,24 +171,24 @@ public void displayChallenge(){
 }
 
 public void processInput(String input){
-if(input.equalsIgnoreCase("quit")){
-System.out.println("Thanks for Playing! Final Score:" + score );
-System.exit(0);
+   if(input.equalsIgnoreCase("quit")){
+      System.out.println("Thanks for Playing! Final Score:" + score );
+      System.exit(0);
 }
 else if (input.startsWith("interact")){
   String numberStr = input.subString("interact".length());
 if (isNumeric (numberStr)){
     int shapeIndex = Integer..parseInt(numberStr) -1;
-    if(shapeIndex >= 0 && shapeIndex < shapes.length && shapes [shapeIndex] != null) {
+      if(shapeIndex >= 0 && shapeIndex < shapes.length && shapes [shapeIndex] != null) {
         shapes[shapeIndex].onInteract(); // call to onInteract
       score++;
       System.out.println("You earned a point on interacting!");
       shapes[shapeIndex] = null;
-}
+   }
 }
 else {
 System.out.println("Invalid shape number for interaction.");
-}
+   }
 }
 else if (input.length() == 2){
   char shapeChar =input.charAt(0);
@@ -211,18 +211,16 @@ else if (input.length() == 2){
 }
 else {
      System.out.println("Invalid shape number or container letter.");
-}
+   }
 }
 else {
      System.out.println("Invalid input format. Use format '1A'.");
-}
+   }
 }
 else {
      System.out.println("Invalid input. Please use correct input.");
+   }
 }
-}
-
-
 
 public boolean is GameOver(){
       for(Shape shape : shape){
