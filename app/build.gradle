@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.shapesorter'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'mysql:mysql-connector-java:8.0.33'
+}
+
+application {
+    mainClass = 'com.shapesorter.ShapeSorterGame'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
