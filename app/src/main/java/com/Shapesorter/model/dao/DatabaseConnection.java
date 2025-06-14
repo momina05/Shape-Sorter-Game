@@ -10,7 +10,6 @@ import java.sql.SQLException;
         private static final String PASSWORD = "mominafaisal@2005";
 
         private static Connection connection;
-
         public static Connection getConnection() throws SQLException {
             if (connection == null || connection.isClosed()) {
                 connection = DriverManager.getConnection(URL, USER, PASSWORD);
