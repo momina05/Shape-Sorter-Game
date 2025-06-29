@@ -1,9 +1,9 @@
 package com.shapesorter.model;
 
-public class Container {
+public class Containers {
     private final String color;
 
-    public Container(String color) {
+    public Containers(String color) {
         this.color = color;
     }
 
@@ -15,7 +15,7 @@ public class Container {
         System.out.println("Container: " + color);
     }
 
-    public boolean canAccept(Shape shape) {
+    public boolean canAccept(Shapes shape) {
         return this.color.equalsIgnoreCase(shape.getColor());
     }
 }
