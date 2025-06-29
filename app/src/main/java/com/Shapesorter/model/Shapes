@@ -1,9 +1,9 @@
 package com.shapesorter.model;
 
-public abstract class Shape {
+public abstract class Shapes {
     private final String color;
 
-    public Shape(String color) {
+    public Shapes(String color) {
         this.color = color;
     }
 
